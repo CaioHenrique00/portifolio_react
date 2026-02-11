@@ -1,0 +1,30 @@
+import "@/styles/globals.css"; // Note que na sua imagem a pasta styles está na raiz
+import { Metadata } from "next";
+import { Providers } from "./providers";
+import { SmoothScroll } from "@/components/animations/smooth-scroll";
+
+export const metadata: Metadata = {
+  title: "Meu Portfólio Parallax",
+  description: "Criado com Next.js, GSAP e HeroUI",
+};
+
+export default function RootLayout({
+  children,
+}: {
+  children: React.ReactNode;
+}) {
+  return (
+    <html lang="pt-BR" suppressHydrationWarning>
+      <head />
+      <body className="min-h-screen bg-background font-sans antialiased overflow-x-hidden">
+        <Providers>
+          <SmoothScroll>
+            <main className="container mx-auto max-w-7xl pt-16 px-6 flex-grow">
+              {children}
+            </main>
+            </SmoothScroll>
+        </Providers>
+      </body>
+    </html>
+  );
+}
