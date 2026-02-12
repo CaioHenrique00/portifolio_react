@@ -4,11 +4,40 @@ import { Metadata } from "next";
 import { Providers } from "./providers";
 
 import { SmoothScroll } from "@/components/animations/smooth-scroll";
-import { ParallaxBackground } from "@/components/ui/ParallaxBackground";
 
 export const metadata: Metadata = {
-  title: "Meu Portfólio Parallax",
-  description: "Criado com Next.js, GSAP e HeroUI",
+  title: "Portfólio - Caio Henrique",
+  description:
+    "Desenvolvedor Frontend especializado em React e Next.js, expandindo para Fullstack com Node.js e SQL.",
+  keywords: [
+    "Caio Henrique",
+    "Desenvolvedor Frontend",
+    "React",
+    "Next.js",
+    "Fullstack",
+    "Portfólio",
+  ],
+  authors: [{ name: "Caio Henrique" }],
+  creator: "Caio Henrique",
+  themeColor: "#0f172a",
+
+openGraph: {
+  title: "Portfólio - Caio Henrique",
+  description:
+    "Desenvolvedor Frontend especializado em React e Next.js.",
+  url: "https://portifolio-caio-henrique-alves.vercel.app/",
+  siteName: "Portfólio Caio",
+  images: [
+    {
+      url: "/public/og-image.png",
+      width: 1200,
+      height: 630,
+      alt: "Portfólio de Caio Henrique",
+    },
+  ],
+  locale: "pt_BR",
+  type: "website",
+},
 };
 
 export default function RootLayout({
