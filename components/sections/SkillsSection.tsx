@@ -91,8 +91,7 @@ export const SkillsSection = () => {
 
   return (
     <section className="relative py-14 sm:py-16 md:py-20 overflow-hidden">
-      {/* 🎨 Background mais leve no mobile */}
-      <div className="absolute inset-0 bg-gradient-to-b from-primary/5 via-transparent to-transparent pointer-events-none" />
+      <div className="absolute inset-0 bg-transparent from-primary/5 via-transparent to-transparent pointer-events-none" />
       <div className="hidden sm:block absolute top-0 left-1/2 -translate-x-1/2 w-[500px] h-[500px] bg-primary/10 rounded-full blur-3xl pointer-events-none" />
 
       <div className="container relative mx-auto px-4 sm:px-6 max-w-7xl">

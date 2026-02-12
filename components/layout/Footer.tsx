@@ -31,8 +31,8 @@ export const Footer = () => {
   ];
 
   return (
-    <footer className="relative pt-16 md:pt-20 pb-8 md:pb-10 bg-background overflow-hidden">
-      <div className="container mx-auto px-5 sm:px-6">
+    <footer className="relative pt-16 md:pt-20 pb-8 md:pb-10 bg-transparent overflow-hidden">
+      <div className="container mx-auto px-2 sm:px-6">
         <div className="flex flex-col md:flex-row justify-between items-center md:items-start gap-12 md:gap-10 mb-14 md:mb-16 text-center md:text-left">
           
           {/* Branding */}
