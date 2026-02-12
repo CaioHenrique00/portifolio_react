@@ -1,7 +1,7 @@
-'use client';
+"use client";
 
-import React from 'react';
-import { Card, CardBody } from '@heroui/react';
+import React from "react";
+import { Card, CardBody } from "@heroui/react";
 export interface ExperienceProps {
   title: string;
   company: string;
@@ -9,11 +9,11 @@ export interface ExperienceProps {
   description: string[];
 }
 
-export const ExperienceCard: React.FC<ExperienceProps> = ({ 
-  title, 
-  company, 
-  period, 
-  description 
+export const ExperienceCard: React.FC<ExperienceProps> = ({
+  title,
+  company,
+  period,
+  description,
 }) => {
   return (
     <Card className="border-none bg-content1 shadow-md hover:shadow-primary/10 transition-shadow w-full">
@@ -27,7 +27,10 @@ export const ExperienceCard: React.FC<ExperienceProps> = ({
         </div>
         <ul className="space-y-2">
           {description.map((item, i) => (
-            <li key={i} className="text-sm text-default-400 flex items-start gap-2">
+            <li
+              key={i}
+              className="text-sm text-default-400 flex items-start gap-2"
+            >
               <span className="text-primary mt-1.5 w-1.5 h-1.5 rounded-full shrink-0 bg-primary" />
               {item}
             </li>

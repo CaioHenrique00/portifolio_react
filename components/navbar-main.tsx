@@ -1,6 +1,6 @@
-'use client';
+"use client";
 
-import React from 'react';
+import React from "react";
 import {
   Navbar,
   NavbarBrand,
@@ -8,23 +8,35 @@ import {
   NavbarItem,
   Link,
   Button,
-} from '@heroui/react';
-import { FadeIn } from './animations/FadeIn';
+} from "@heroui/react";
+
+import { FadeIn } from "./animations/FadeIn";
 
 export const NavbarMain = () => {
   return (
-    <Navbar maxWidth="xl" position="sticky" isBlurred className="bg-background/70">
+    <Navbar
+      isBlurred
+      className="bg-background/20"
+      maxWidth="xl"
+      position="sticky"
+    >
       <NavbarBrand>
         <FadeIn direction="none" duration={0.5}>
-          <p className="font-bold text-inherit text-xl tracking-tighter">PORTFÓLIO</p>
+          <p className="font-bold text-inherit text-xl tracking-tighter">
+            <span className="text-blue-200"> Portifólio </span>
+          </p>
         </FadeIn>
       </NavbarBrand>
 
       <NavbarContent className="hidden sm:flex gap-8" justify="center">
-        {['Sobre', 'Projetos', 'Contacto'].map((item, index) => (
+        {["Sobre", "Projetos", "Contacto"].map((item, index) => (
           <NavbarItem key={item}>
-            <FadeIn direction="down" delay={0.1 * index} distance={20}>
-              <Link color="foreground" href={`#${item.toLowerCase()}`} className="text-sm font-medium">
+            <FadeIn delay={0.1 * index} direction="down" distance={10}>
+              <Link
+                className="text-sm font-medium"
+                color="foreground"
+                href={`#${item.toLowerCase()}`}
+              >
                 {item}
               </Link>
             </FadeIn>
@@ -34,8 +46,14 @@ export const NavbarMain = () => {
 
       <NavbarContent justify="end">
         <NavbarItem>
-          <FadeIn direction="left" delay={0.4}>
-            <Button as={Link} color="primary" href="#" variant="flat" radius="full">
+          <FadeIn delay={0.4} direction="left">
+            <Button
+              as={Link}
+              color="primary"
+              href="#"
+              radius="full"
+              variant="flat"
+            >
               Currículo
             </Button>
           </FadeIn>

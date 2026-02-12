@@ -1,17 +1,20 @@
 "use client";
 
 import React from "react";
+
 import { FadeIn } from "../animations/FadeIn";
 import { ExperienceCard } from "../experience-card";
+import { AuroraText } from "../ui/AuroraText";
+
 import { experiencesData } from "@/data/experience";
 
 export const ExperienceSection = () => {
   return (
-    <section id="experiencia" className="py-20 bg-background/50">
+    <section className="py-20" id="experiencia ">
       <div className="container mx-auto px-6">
         <FadeIn direction="up">
           <h2 className="text-4xl font-bold mb-16 tracking-tighter uppercase text-center">
-            Experiência Profissional
+            <AuroraText>Experiência Profissional</AuroraText>
           </h2>
         </FadeIn>
 
@@ -22,8 +25,8 @@ export const ExperienceSection = () => {
               className="relative flex items-center justify-between md:justify-normal md:odd:flex-row-reverse group"
             >
               <FadeIn
-                direction={index % 2 === 0 ? "right" : "left"}
                 className="w-[calc(100%-4rem)] md:w-[45%]"
+                direction={index % 2 === 0 ? "right" : "left"}
               >
                 <ExperienceCard {...exp} />
               </FadeIn>

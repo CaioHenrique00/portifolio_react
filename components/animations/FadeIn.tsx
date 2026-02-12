@@ -1,11 +1,12 @@
-'use client';
+"use client";
 
-import React, { useRef, useLayoutEffect } from 'react';
-import { gsap } from '@/config/gsap';
+import React, { useRef, useLayoutEffect } from "react";
+
+import { gsap } from "@/config/gsap";
 
 interface FadeInProps {
   children: React.ReactNode;
-  direction?: 'up' | 'down' | 'left' | 'right' | 'none';
+  direction?: "up" | "down" | "left" | "right" | "none";
   delay?: number;
   duration?: number;
   distance?: number;
@@ -14,7 +15,7 @@ interface FadeInProps {
 
 export const FadeIn: React.FC<FadeInProps> = ({
   children,
-  direction = 'up',
+  direction = "up",
   delay = 0,
   duration = 1,
   distance = 50,
@@ -23,7 +24,7 @@ export const FadeIn: React.FC<FadeInProps> = ({
 
   useLayoutEffect(() => {
     const element = elementRef.current;
-    
+
     // Configuração das coordenadas iniciais baseada na direção
     const offsets = {
       up: { y: distance },
@@ -36,9 +37,9 @@ export const FadeIn: React.FC<FadeInProps> = ({
     const ctx = gsap.context(() => {
       gsap.fromTo(
         element,
-        { 
-          opacity: 0, 
-          ...offsets[direction] 
+        {
+          opacity: 0,
+          ...offsets[direction],
         },
         {
           opacity: 1,
@@ -46,13 +47,13 @@ export const FadeIn: React.FC<FadeInProps> = ({
           y: 0,
           duration,
           delay,
-          ease: 'power3.out',
+          ease: "power3.out",
           scrollTrigger: {
             trigger: element,
-            start: 'top 85%',
-            toggleActions: 'play none none reverse',
+            start: "top 85%",
+            toggleActions: "play none none reverse",
           },
-        }
+        },
       );
     }, elementRef);
 

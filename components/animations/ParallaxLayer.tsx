@@ -1,24 +1,25 @@
-'use client';
+"use client";
 
-import React, { useRef, useLayoutEffect } from 'react';
-import { gsap } from '@/config/gsap';
+import React, { useRef, useLayoutEffect } from "react";
+
+import { gsap } from "@/config/gsap";
 
 interface ParallaxLayerProps {
   children: React.ReactNode;
-  speed?: number; 
+  speed?: number;
   className?: string;
 }
 
-export const ParallaxLayer: React.FC<ParallaxLayerProps> = ({ 
-  children, 
-  speed = 0.5, 
-  className = "" 
+export const ParallaxLayer: React.FC<ParallaxLayerProps> = ({
+  children,
+  speed = 0.5,
+  className = "",
 }) => {
   const target = useRef<HTMLDivElement>(null);
 
   useLayoutEffect(() => {
     const element = target.current;
-    
+
     const ctx = gsap.context(() => {
       gsap.to(element, {
         y: () => -window.innerHeight * speed,
@@ -26,8 +27,8 @@ export const ParallaxLayer: React.FC<ParallaxLayerProps> = ({
         scrollTrigger: {
           trigger: element,
           start: "top bottom",
-          end: "bottom top",  
-          scrub: true,          
+          end: "bottom top",
+          scrub: true,
         },
       });
     }, target);

@@ -1,6 +1,8 @@
-import "@/styles/globals.css"; // Note que na sua imagem a pasta styles está na raiz
+import "@/styles/globals.css";
 import { Metadata } from "next";
+
 import { Providers } from "./providers";
+
 import { SmoothScroll } from "@/components/animations/smooth-scroll";
 
 export const metadata: Metadata = {
@@ -14,15 +16,15 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="pt-BR" suppressHydrationWarning>
+    <html suppressHydrationWarning lang="pt-BR">
       <head />
       <body className="min-h-screen bg-background font-sans antialiased overflow-x-hidden">
         <Providers>
           <SmoothScroll>
-            <main className="container mx-auto max-w-7xl pt-16 px-6 flex-grow">
+            <main className="container mx-auto max-w-7xl pt-5 px-6 flex-grow">
               {children}
             </main>
-            </SmoothScroll>
+          </SmoothScroll>
         </Providers>
       </body>
     </html>

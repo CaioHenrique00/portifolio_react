@@ -1,9 +1,9 @@
-'use client';
+"use client";
 
-import * as React from 'react';
-import { HeroUIProvider } from '@heroui/react';
-import { ThemeProvider as NextThemesProvider } from 'next-themes';
-import { useRouter } from 'next/navigation';
+import * as React from "react";
+import { HeroUIProvider } from "@heroui/react";
+import { ThemeProvider as NextThemesProvider } from "next-themes";
+import { useRouter } from "next/navigation";
 
 export interface ProvidersProps {
   children: React.ReactNode;
@@ -14,10 +14,7 @@ export function Providers({ children }: ProvidersProps) {
 
   return (
     <HeroUIProvider navigate={router.push}>
-      <NextThemesProvider 
-        attribute="class" 
-        defaultTheme="dark"
-      >
+      <NextThemesProvider attribute="class" defaultTheme="dark">
         {children}
       </NextThemesProvider>
     </HeroUIProvider>

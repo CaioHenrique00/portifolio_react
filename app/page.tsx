@@ -1,25 +1,25 @@
+import { Footer } from "@/components/layout/Footer";
 import { NavbarMain } from "@/components/navbar-main";
 import { AboutSection } from "@/components/sections/AboutSection";
 import { EducationSection } from "@/components/sections/EducationSection";
 import { ExperienceSection } from "@/components/sections/ExperienceSection";
 import { HeroSection } from "@/components/sections/HeroSection";
+import { SkillsSection } from "@/components/sections/SkillsSection";
+import { ParallaxBackground } from "@/components/ui/ParallaxBackground";
 
 export default function Home() {
   return (
     <>
       <NavbarMain />
-      
-      <div className="flex flex-col w-full">
+      <ParallaxBackground />
+      <main className="flex flex-col w-full relative z-10">
         <HeroSection />
-        <AboutSection /> 
+        <AboutSection />
         <ExperienceSection />
         <EducationSection />
-        <section className="h-screen flex items-center justify-center bg-content1/50">
-          <p className="text-default-400 animate-pulse">
-            Role para baixo para ver o efeito Parallax
-          </p>
-        </section>
-      </div>
+        <SkillsSection />
+        <Footer />
+      </main>
     </>
   );
 }
