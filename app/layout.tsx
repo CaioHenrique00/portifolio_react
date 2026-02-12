@@ -4,7 +4,7 @@ import { Metadata } from "next";
 import { Providers } from "./providers";
 
 import { SmoothScroll } from "@/components/animations/smooth-scroll";
-
+//em desenvolvimento
 export const metadata: Metadata = {
   title: "Portfólio - Caio Henrique",
   description:
